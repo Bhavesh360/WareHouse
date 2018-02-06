@@ -1,0 +1,103 @@
+
+    <form id="add-product-form" ng-submit="$ctrl.add(data)">
+
+        <label>Name:
+        <input id="product-name" type="text" name="name" ng-model="data.name"></input></label><br/>
+
+        <label>Quantity:
+        <input id="product-quantity" type="text" name="quantity" ng-model="data.quantity"></input></label><br/>
+
+        <label>Retail price:
+        <input id="product-retail" type="text" name="retail" ng-model="data.retail_price"></input></label><br/>
+
+        <label>WholeSale price:
+        <input id="product-wholesale" type="text" name="wholesale" ng-model="data.whole_sale_price"></input></label><br/>
+
+        <label>Type:
+            <select ng-model="data.type" data-ng-init="$ctrl.getType()">
+                <option ng-repeat="x in $ctrl.vm.types" value="{{x.ID}}">{{x.DESCRIPTION}}</option>
+            </select>
+
+        <input id="product-type" type="text" name="type" ng-model="data.type"></input></label><br/>
+
+        <label>Color:
+              <select ng-model="data.color" data-ng-init="$ctrl.getColor()">
+                  <option ng-repeat="x in $ctrl.vm.color" value="{{x.ID}}">{{x.DESCRIPTION}}</option>
+              </select>
+        <input id="product-color" type="text" name="color" ng-model="data.color"></input></label><br/>
+        <br>
+        <input type="submit" id="app-product-submit-btn" value="Add" />
+    </form>
+    <br>
+    <form ng-submit="$ctrl.loadAll()">
+        <input type="submit" id="loadAllbtn" value="LoadAll" />
+    </form>
+    <br>
+    <table>
+         <tr>
+           <th>ID</th>
+           <th>NAME</th>
+           <th>QUANTITY</th>
+           <th>RETAIL_PRICE</th>
+           <th>WHOLE_SALE_PRICE</th>
+           <th>TYPE</th>
+           <th>COLOR</th>
+           <th></th>
+         </tr>
+         <tr ng-repeat="p in $ctrl.vm.products">
+           <td ng-show="(!p.editFlg)">{{ p.ID }}</td>
+           <td ng-show="(!p.editFlg)">{{ p.NAME }}</td>
+           <td ng-show="(!p.editFlg)">{{ p.QUANTITY }}</td>
+           <td ng-show="(!p.editFlg)">{{ p.RETAIL_PRICE }}</td>
+           <td ng-show="(!p.editFlg)">{{ p.WHOLE_SALE_PRICE }}</td>
+           <td ng-show="(!p.editFlg)">{{ p.TYPE }}</td>
+           <td ng-show="(!p.editFlg)">{{ p.COLOR }}</td>
+           <td ng-show="(!p.editFlg)">
+               <form ng-submit="$ctrl.edit(p)">
+                   <input type="hidden" name="id" ng-model="p.ID">
+                   <input type="submit" id="updatebtn" value="edit">
+               </form>
+           </td>
+
+           <td ng-show="p.editFlg">{{ p.ID }}</td>
+           <td ng-show="p.editFlg"><input type="text" ng-model="p.NAME" /></td>
+           <td ng-show="p.editFlg"><input type="text" ng-model="p.QUANTITY" /></td>
+           <td ng-show="p.editFlg"><input type="text" ng-model="p.RETAIL_PRICE" /></td>
+           <td ng-show="p.editFlg"><input type="text" ng-model="p.WHOLE_SALE_PRICE" /></td>
+           <td ng-show="p.editFlg">
+               <select ng-model="p.TYPE">
+                   <option ng-repeat="x in $ctrl.vm.types" value="{{x.ID}}">{{x.DESCRIPTION}}</option>
+               </select>
+           </td>
+           <td ng-show="p.editFlg">
+               <select ng-model="p.COLOR">
+                   <option ng-repeat="x in $ctrl.vm.color" value="{{x.ID}}">{{x.DESCRIPTION}}</option>
+               </select>
+           </td>
+           <td ng-show="p.editFlg">
+               <form ng-submit="$ctrl.updatebyId(p)">
+                   <input type="hidden" ng-model="p.ID">
+                   <input type="submit" id="updatebtn" value="update">
+               </form>
+           </td>
+         </tr>
+       </table>
+
+
+    <!-- <form ng-submit="$ctrl.updatebyId(data)">
+        ID:
+        <input id="product-id" type="text" name="id" ng-model="data.id"></input><br/>
+
+        Name:
+        <input id="product-name" type="text" name="name" ng-model="data.name"></input><br/>
+
+        Retail price:
+        <input id="product-retail" type="text" name="retail" ng-model="data.retail_price"></input><br/>
+
+        WholeSale price:
+        <input id="product-wholesale" type="text" name="wholesale" ng-model="data.whole_sale_price"></input><br/>
+
+
+        <input type="submit" id="updatebtn" value="updatebyId">
+
+    </form> -->

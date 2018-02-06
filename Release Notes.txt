@@ -1,0 +1,21 @@
+###**PG10 T3 Web Apps 3: A2: Warehouse Final**
+
+----------
+
+developer: Trendz (Bhavesh Gupta, Erin Du, Max Bolanos)
+date: Aug 8,2017
+product: Trendz -warehouse
+
+
+####**Download/Install**
+---------
+ - Path to the Source code in Perforce...
+ - //VFS_Depot/Programming/PG10/Team/Trendz/
+
+
+####**How to use**
+-------
+ Open index.php, Click any of the three options:
+	Customer: add items to cart and confirm your order to be sent to the Fulfillment person to fulfill.
+	Inventory: Add new new products to the database and update the database entries. 
+	Fulfillment: Fulfill orders placed by the customer

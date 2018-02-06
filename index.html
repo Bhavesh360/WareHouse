@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Demo Copyright (C) 2015 Kibble Games Inc in partnership with Vancouver Film School -->
+<html ng-app="app">
+	<head>
+        <title>App!</title>
+
+        <meta name="description" content="Angular App">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Artifika|Droid+Serif|Fredericka+the+Great|Libre+Baskerville|PT+Mono|Fira+Mono" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+
+	<!-- ng-change is useful for a input field -->
+
+   	<body ng-controller="AppController as app"><!-- this allows {{}} access to the object as app -->
+		<header>
+			<h1 id="title">{{app.vm.title}}</h1>
+			<h3>by {{app.vm.author}}</h3> <!-- if you want to access a method, it is just app.someMethod() -->
+		</header>
+		<div class="wrapper">
+            <!-- <pg-login></pg-login> -->
+            <div id="app-area">
+
+
+                    <!-- <pg-timer></pg-timer> -->
+				<pg-menu></pg-menu>
+
+
+                <div class="current-screen">
+                    <div id="screen" class="app-screen" >
+                        <!-- UI Module View Routing dynamically loads partial views here -->
+                        <div ui-view></div>
+                    </div>
+                </div>
+                <div class='clear'></div>
+            </div>
+
+        </div>
+        <section id="scripts">
+            <!-- Load all the Angular components here, we assume they will load 1.4.7-->
+            <script src="//code.angularjs.org/1.6.2/angular.js" defer></script>
+            <script src="//code.angularjs.org/1.6.2/angular-resource.js" defer></script>
+            <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js" defer></script>
+
+            <!--
+             List the main scripts here in order,
+                1. module declarations and routing
+                2. directives that the HTML will use
+                3. services that the controllers will use
+                4. controllers
+             -->
+            <script src="scripts/Modules.js" defer></script>
+
+            <script src="scripts/services/TimerService.js" defer></script>
+            <script src="scripts/services/DataService.js" defer></script>
+
+            <script src="scripts/directives/Draggable.js" defer></script>
+
+            <script src="scripts/components/Menu.js" defer></script>
+            <script src="scripts/components/Login.js" defer></script>
+            <script src="scripts/components/Timer.js" defer></script>
+			<script src="scripts/components/AddProduct.js" defer></script>
+			<script src="scripts/components/Fulfillment.js" defer></script>
+			<script src="scripts/components/CustomerView.js" defer></script>
+            <script src="scripts/App.js" defer></script>
+        </section>
+    </body>
+</html>
+
+
+
+
+        </section>
+    </body>
+</html>

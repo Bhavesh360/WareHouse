@@ -1,0 +1,33 @@
+<!-- <form ng-submit="$ctrl.showPickList()" data-ng-init="$ctrl.showPickList()">
+    <input type="submit" value="Refresh Pick List" />
+</form> -->
+<h3>PICK LIST</h3>
+<table data-ng-init="$ctrl.showPickList()">
+  <tr>
+    <th>ORDER_ID</th>
+    <th>PRODUCT_NAME</th>
+    <th>TYPE</th>
+    <th>REQUIRED_QTY</th>
+    <th>ACTUAL_QTY</th>
+    <th>AISLE_NUM</th>
+    <th></th>
+  </tr>
+  <tr ng-repeat="p in $ctrl.vm.picklist">
+    <td>{{ p.ORDER_ID }}</td>
+    <td>{{ p.NAME }}</td>
+    <td>{{ p.TYPE }}</td>
+    <td>{{ p.REQUIRED_QTY }}</td>
+    <td>{{ p.ACTUAL_QTY }}</td>
+    <td>{{ p.AISLE_NUM }}</td>
+    <td>
+        <form ng-submit="$ctrl.fulfil(p)" ng-if="p.enoughQty">
+            <input type="hidden" name="orderId" ng-model="p.ORDER_ID"/>
+            <input type="hidden" name="productId" ng-model="p.PRODUCT_ID"/>
+            <input type="submit" value="fulfill" />
+        </form>
+        <span ng-if="(!p.enoughQty)">
+            not enough quantity
+        </span>
+    </td>
+  </tr>
+</table>

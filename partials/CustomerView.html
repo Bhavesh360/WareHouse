@@ -1,0 +1,74 @@
+
+    <form ng-submit="$ctrl.loadbyType(data)">
+      <label>Type:
+      <!-- <input id="product-type" type="text" name="type" ng-model="data.type"></input> -->
+      <!-- <select id="product-type" type="text" name="type" ng-model="data.type">
+        <option value="12">12</option>
+        <option value="3">3</option>
+      </select> -->
+      <select ng-model="data.type" data-ng-init="$ctrl.getType()">
+          <option ng-repeat="x in $ctrl.vm.types" value="{{x.ID}}">{{x.DESCRIPTION}}</option>
+      </select>
+    </label>
+        <input type="submit" id="loadByTypeBtn" value="loadByType" />
+    </form>
+    <br>
+    <table> ADD PRODUCTS TO YOUR CART DEAR CUSTOMER!
+      <tr>
+        <!-- <th>ID</th> -->
+        <th>NAME</th>
+        <!-- <th>AISLE_NUM</th> -->
+        <th>QUANTITY</th>
+        <th>RETAIL_PRICE</th>
+        <!-- <th>WHOLE_SALE_PRICE</th> -->
+        <th>TYPE</th>
+        <th>COLOR</th>
+        <th></th>
+      </tr>
+
+        <tr ng-repeat="p in $ctrl.vm.products">
+          <!-- <td>{{ p.ID }}</td> -->
+          <td ng-model = "data.name">         {{ p.NAME }}            </td>
+          <!-- <td>{{ p.AISLE_NUM }}</td> -->
+          <td ng-model = "data.quantity">     {{ p.QUANTITY }}        </td>
+          <td ng-model = "data.retail_price"> {{ p.RETAIL_PRICE }}    </td>
+          <!-- <td>{{ p.WHOLE_SALE_PRICE }}</td> -->
+          <td ng-model = "data.type">         {{ p.TYPE }}            </td>
+          <td ng-model = "data.color">        {{ p.COLOR }}           </td>
+          <td>
+            <button id="addItemToCart" value="Add To Cart" ng-click = "$ctrl.addItemsToCart(p)">Add to Cart</button>
+          </td>
+        </tr>
+
+    </table>
+    <br>
+    <br>
+    <table> YOUR CART!!
+      <tr>
+        <!-- <th>ID</th> -->
+        <th>NAME</th>
+        <!-- <th>AISLE_NUM</th> -->
+        <th>QUANTITY</th>
+        <th>RETAIL_PRICE</th>
+        <!-- <th>WHOLE_SALE_PRICE</th> -->
+        <th>TYPE</th>
+        <th>COLOR</th>
+        <th></th>
+      </tr>
+
+        <tr ng-repeat="p in $ctrl.cartItems">
+          <!-- <td>{{ p.ID }}</td> -->
+          <td ng-model = "data.name">         {{ p.NAME }}            </td>
+          <!-- <td>{{ p.AISLE_NUM }}</td> -->
+          <td ng-model = "data.quantity">     {{ p.QUANTITY }}        </td>
+          <td ng-model = "data.retail_price"> {{ p.RETAIL_PRICE }}    </td>
+          <!-- <td>{{ p.WHOLE_SALE_PRICE }}</td> -->
+          <td ng-model = "data.type">         {{ p.TYPE }}            </td>
+          <td ng-model = "data.color">        {{ p.COLOR }}           </td>
+          <td ng-model = "data.availibility">        {{ p.AVAILIBILITY }}           </td>
+
+        </tr>
+
+    </table>
+
+    <button id = "confirmOrder" value = "Confirm Order" ng-click = "$ctrl.confirmOrder()">Confirm Order</button>
