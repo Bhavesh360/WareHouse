@@ -1,10 +1,6 @@
 /**
  * Angular Module Definitions
  *
- * @copyright: (C) 2014-2016 Kibble Games Inc in cooperation with
- *                             Vancouver Film School.
- *                             All Rights Reserved.
- * @author: Scott Henshaw
  *
  */
 'use strict';
