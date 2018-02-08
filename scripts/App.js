@@ -1,10 +1,4 @@
-/**
- * @name VFS Angular App Controller
- *
- * @copyright (C) 2014-2015 Kibble Games Inc in cooperation with Vancouver Film School.  All Rights Reserved.
- * @author Scott Henshaw
- *
- */
+
 'use_strict';
 
 //import { Timer } from 'timer';
