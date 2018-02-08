@@ -1,8 +1,6 @@
 /**
  * Angular Services - DataService
  *
- * @copyright: (C) 2016 Kibble Games Inc in cooperation with Vancouver Film School.  All Rights Reserved.
- * @author: Scott Henshaw
  *
  */
  'use strict';
