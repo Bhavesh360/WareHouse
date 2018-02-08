@@ -3,8 +3,6 @@
  * @desc The timer object is a class that manages a simple Angular interval timer
  * much like the setInterval in JavaScript.  Just a sample of what can be done.
  *
- * @copyright (C) 2014-2015 Kibble Games Inc in cooperation with Vancouver Film School.  All Rights Reserved.
- * @author Scott Henshaw
  *
  */
 
